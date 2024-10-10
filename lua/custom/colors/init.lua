@@ -22,8 +22,8 @@ DefineNeovimColors = function()
   vim.cmd.hi 'DiagnosticError guibg=black gui=bold'
   vim.cmd.hi 'Question guifg=darkred'
   vim.cmd.hi 'UndotreeDiffRemoved guibg=red'
-  vim.cmd.hi 'UndotreeDiffAdded guibg=green'
-  vim.cmd.hi 'Comment guifg=darkgreen'
-  vim.cmd.hi '@variable guifg=darkgreen'
-  vim.cmd.hi 'Operator guifg=black cterm=bold gui=bold'
+  vim.cmd.hi 'UndotreeDiffAdded guibg=pink'
+  vim.cmd.hi 'Comment guifg=pink'
+  vim.cmd.hi '@variable guifg=pink'
+  vim.cmd.hi 'Operator guifg=white cterm=bold gui=bold'
 end
