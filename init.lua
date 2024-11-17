@@ -1,8 +1,7 @@
-require 'custom.colors'
-DefineNeovimColors()
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.cmd.set 'guicursor+=n-v-c:blinkon500-blinkoff500'
+vim.cmd.set 'guicursor+=i:block'
 
 vim.g.have_nerd_font = false
 
@@ -355,17 +354,17 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        python = { 'isort' }, --'black' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
 
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
-    event = 'InsertEnter',
+    -- event = 'InsertEnter',
     dependencies = {
       {
         'L3MON4D3/LuaSnip',
@@ -404,7 +403,7 @@ require('lazy').setup({
             luasnip.lsp_expand(args.body)
           end,
         },
-        completion = { completeopt = 'menu,menuone,noinsert' },
+        -- completion = { completeopt = 'menu,menuone,noinsert', autocomplete = false },
 
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
@@ -491,7 +490,7 @@ require('lazy').setup({
   -- },
 
   -- Highlight todo, notes, etc in comments
-  -- { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = true } },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
@@ -561,7 +560,7 @@ require('lazy').setup({
     end,
   },
 
-  -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
@@ -595,6 +594,9 @@ require('lazy').setup({
     },
   },
 })
+
+require 'custom.colors'
+DefineNeovimColors()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

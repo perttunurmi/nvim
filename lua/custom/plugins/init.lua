@@ -15,4 +15,7 @@ return {
     'tpope/vim-fugitive',
     cmd = 'Git',
   },
+  {
+    'ofirgall/ofirkai.nvim',
+  },
 }
