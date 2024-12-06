@@ -1,8 +1,11 @@
 vim.cmd.set 'guicursor+=n-v-c:blinkon500-blinkoff500'
 vim.cmd.set 'guicursor+=i:block'
 
+vim.opt.colorcolumn = '80'
+
 vim.opt.relativenumber = true
 vim.opt.showmode = true
+vim.opt.wrap = false
 
 vim.opt.cursorline = false
 
@@ -20,3 +23,6 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 vim.opt.undofile = true
+
+vim.keymap.set('n', '<space>x', ':.lua<CR>')
+vim.keymap.set('v', '<space>x', ':lua<CR>')
