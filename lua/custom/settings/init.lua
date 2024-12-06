@@ -2,6 +2,7 @@ vim.cmd.set 'guicursor+=n-v-c:blinkon500-blinkoff500'
 vim.cmd.set 'guicursor+=i:block'
 
 vim.opt.colorcolumn = '80'
+vim.opt.cursorline = false
 
 vim.opt.relativenumber = true
 vim.opt.showmode = true
