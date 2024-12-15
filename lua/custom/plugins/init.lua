@@ -10,7 +10,7 @@ return {
   },
   {
     'tpope/vim-fugitive',
-    cmd = 'Git',
+    vim.keymap.set('n', '<leader>g', vim.cmd.Git),
   },
   {
     'HiPhish/rainbow-delimiters.nvim',
