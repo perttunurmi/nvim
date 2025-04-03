@@ -1,3 +1,3 @@
-if true then
-    print '.lua file is open'
-end
+-- if true then
+--     print '.lua file is open'
+-- end
