@@ -45,6 +45,9 @@ return {
                     map('<leader>ds', function()
                         Snacks.picker.lsp_symbols()
                     end, '[D]ocument [S]ymbols')
+                    map('<leader>q', function()
+                        Snacks.picker.diagnostics()
+                    end, '[Q]uick [D]iagnostics')
 
                     map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
                     map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
@@ -137,6 +140,7 @@ return {
             }
 
             local capabilities = vim.lsp.protocol.make_client_capabilities()
+
             capabilities = require('blink.cmp').get_lsp_capabilities()
 
             --  - cmd (table): Override the default command used to start the server
@@ -195,5 +199,5 @@ return {
         end,
     },
 
-    vim.diagnostic.config { virtual_lines = { current_line = true }, virtual_text = true },
+    -- vim.diagnostic.config { virtual_lines = { current_line = true }, virtual_text = true },
 }

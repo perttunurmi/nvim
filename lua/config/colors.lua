@@ -1,5 +1,3 @@
-vim.cmd.colorscheme 'habamax'
-
 Colors = function()
     -- Normal
     vim.cmd.hi 'Normal guibg=none'
@@ -7,14 +5,14 @@ Colors = function()
     vim.cmd.hi 'NormalNC guibg=none'
     vim.cmd.hi 'NormalNb guibg=none'
     vim.cmd.hi 'NormalSB guibg=none'
-    vim.cmd.hi 'ColorColumn guibg=darkred'
+    vim.cmd.hi 'ColorColumn guibg=NvimDarkGrey3'
     vim.cmd.hi 'LineNr guibg=none gui=bold'
     vim.cmd.hi 'SignColumn guibg=none'
-    vim.cmd.hi 'Type guifg=SeaGreen'
-    vim.cmd.hi 'Constant gui=bold guifg=nvimlightred'
-    vim.cmd.hi 'Statement guifg=#A33F3F'
-    vim.cmd.hi 'Function guifg=nvimlightred'
-    vim.cmd.hi 'Special gui=bold'
+    -- vim.cmd.hi 'Type guifg=SeaGreen'
+    -- vim.cmd.hi 'Constant gui=bold guifg=nvimlightred'
+    -- vim.cmd.hi 'Statement guifg=#A33F3F'
+    -- vim.cmd.hi 'Function guifg=nvimlightred'
+    -- vim.cmd.hi 'Special gui=bold'
 
     vim.cmd.hi 'TelescopeNormal guibg=none'
     vim.cmd.hi 'TelescopeBorder guibg=none'
@@ -40,8 +38,5 @@ Colors = function()
     vim.cmd.hi 'orgItalicDelimiter guifg=grey'
 end
 
+vim.cmd.colorscheme 'vague'
 Colors()
-
-require('lualine').setup {
-    theme = 'codedark',
-}

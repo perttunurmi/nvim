@@ -23,3 +23,6 @@ vim.keymap.set('n', '<leader>T', function()
 end)
 
 vim.keymap.set('n', '<C-w>c', ':tabnew<CR>') -- Same as in Tmux
+
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')

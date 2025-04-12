@@ -17,4 +17,7 @@ return {
     {
         'dikiaap/minimalist',
     },
+    {
+        'vague2k/vague.nvim',
+    },
 }

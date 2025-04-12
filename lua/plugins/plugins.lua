@@ -16,8 +16,4 @@ return {
         'mbbill/undotree',
         vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle),
     },
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-    },
 }

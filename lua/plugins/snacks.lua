@@ -14,7 +14,7 @@ return {
                 enabled = true,
                 timeout = 3000,
             },
-            picker = { enabled = true, layout = 'ivy' },
+            picker = { enabled = true },
             quickfile = { enabled = true },
             scope = { enabled = true },
             scroll = { enabled = false },

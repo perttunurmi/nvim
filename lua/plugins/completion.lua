@@ -33,6 +33,9 @@ return {
             -- Default list of enabled providers defined so that you can extend it
             -- elsewhere in your config, without redefining it, due to `opts_extend`
             sources = {
+                per_filetype = {
+                    org = { 'orgmode' },
+                },
                 default = { 'lsp', 'path', 'snippets', 'buffer' },
                 providers = {
                     cmdline = {
@@ -40,6 +43,11 @@ return {
                         enabled = function()
                             return vim.fn.getcmdtype() ~= ':' or not vim.fn.getcmdline():match "^[%%0-9,'<>%-]*!"
                         end,
+                    },
+                    orgmode = {
+                        name = 'Orgmode',
+                        module = 'orgmode.org.autocompletion.blink',
+                        fallbacks = { 'buffer' },
                     },
                 },
             },
