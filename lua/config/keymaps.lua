@@ -14,8 +14,8 @@ vim.keymap.set('n', '<leader>y', '"+y') -- Copy to clipboard
 vim.keymap.set('n', '<leader>p', '"+p') -- Paste from clipboard
 
 -- Move regions in visual mode and keep the selection after move
-vim.keymap.set('v', 'J', ':move+2<CR>gv=gv')
-vim.keymap.set('v', 'K', ':move-2<CR>gv=gv')
+vim.keymap.set('v', '<S-J>', ":m '>+1<CR>gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<S-K>', ":m '<-2<CR>gv", { noremap = true, silent = true })
 
 -- TODO: Toggle
 vim.keymap.set('n', '<leader>T', function()
