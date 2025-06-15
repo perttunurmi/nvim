@@ -6,6 +6,7 @@ Colors = function()
     vim.cmd.hi 'NormalNb guibg=none'
     vim.cmd.hi 'NormalSB guibg=none'
     vim.cmd.hi 'ColorColumn guibg=NvimDarkGrey3'
+    vim.cmd.hi 'ColorColumn guibg=darkred'
     vim.cmd.hi 'LineNr guibg=none gui=bold'
     vim.cmd.hi 'SignColumn guibg=none'
     -- vim.cmd.hi 'Type guifg=SeaGreen'
