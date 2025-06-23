@@ -12,10 +12,6 @@ return {
     {
         'neovim/nvim-lspconfig',
         dependencies = {
-            -- {
-            --     'nvim-java/nvim-java',
-            --     opts = {},
-            -- },
             { 'williamboman/mason.nvim', opts = {} },
             'williamboman/mason-lspconfig.nvim',
             'WhoIsSethDaniel/mason-tool-installer.nvim',
@@ -76,7 +72,8 @@ return {
                     -- When you move your cursor, the highlights will be cleared (the second autocommand).
                     local client = vim.lsp.get_client_by_id(event.data.client_id)
                     if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
-                        local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+                        local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight',
+                            { clear = false })
                         vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
                             buffer = event.buf,
                             group = highlight_augroup,
@@ -160,6 +157,7 @@ return {
                 ts_ls = {},
                 --
 
+
                 lua_ls = {
                     -- cmd = { ... },
                     -- filetypes = { ... },
@@ -180,10 +178,9 @@ return {
             vim.list_extend(ensure_installed, {
                 'stylua', -- Used to format Lua code
             })
-            require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+            require('mason-tool-installer').setup {}
 
             require('mason-lspconfig').setup {
-                ensure_installed = {},
                 automatic_installation = false,
                 handlers = {
                     function(server_name)
@@ -198,6 +195,7 @@ return {
             }
         end,
     },
+
 
     -- vim.diagnostic.config { virtual_lines = { current_line = true }, virtual_text = true },
 }
