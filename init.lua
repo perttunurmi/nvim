@@ -62,3 +62,18 @@ if not Vscode then
     vim.keymap.set("n", "<M-3>", function() harpoon:list():select(3) end)
     vim.keymap.set("n", "<M-4>", function() harpoon:list():select(4) end)
 end
+
+vim.lsp.config['clangd'] = {
+    cmd = { 'clangd' },
+    root_markers = { '.clangd', 'compile_commands.json', '.git' },
+    filetypes = { 'c', 'cpp' },
+    capabilities = {
+        textDocument = {
+            semanticTokens = {
+                multilineTokenSupport = true,
+            }
+        }
+    }
+}
+
+vim.lsp.enable('clangd')

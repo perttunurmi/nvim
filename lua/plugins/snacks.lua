@@ -7,11 +7,11 @@ return {
         opts = {
             bigfile = { enabled = true },
             dashboard = { enabled = false },
-            explorer = { enabled = true },
+            explorer = { enabled = false },
             indent = { enabled = false },
             input = { enabled = false },
             notifier = {
-                enabled = true,
+                enabled = false,
                 timeout = 3000,
             },
             picker = { enabled = true },
@@ -394,20 +394,6 @@ return {
             },
             -- Other
             {
-                '<leader>z',
-                function()
-                    Snacks.zen()
-                end,
-                desc = 'Toggle Zen Mode',
-            },
-            {
-                '<leader>Z',
-                function()
-                    Snacks.zen.zoom()
-                end,
-                desc = 'Toggle Zoom',
-            },
-            {
                 '<leader>.',
                 function()
                     Snacks.scratch()
@@ -532,7 +518,8 @@ return {
                     Snacks.toggle.option('relativenumber', { name = 'Relative Number' }):map '<leader>oL'
                     Snacks.toggle.diagnostics():map '<leader>od'
                     Snacks.toggle.line_number():map '<leader>ol'
-                    Snacks.toggle.option('conceallevel', { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map '<leader>oc'
+                    Snacks.toggle.option('conceallevel',
+                        { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map '<leader>oc'
                     Snacks.toggle.treesitter():map '<leader>oT'
                     Snacks.toggle.option('background', { off = 'light', on = 'dark', name = 'Dark Background' }):map '<leader>ob'
                     Snacks.toggle.inlay_hints():map '<leader>oh'
