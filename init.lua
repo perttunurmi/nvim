@@ -1,79 +1,35 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+require 'config'
 
 if vim.g.vscode then
-    Vscode = true
-else
-    Vscode = false
-    require 'config.lazy'
-    require 'config.colors'
+    return 0
 end
 
-require 'config.settings'
-require 'config.keymaps'
+-- WSL Clipboard
+require 'lib.is_wsl'
+if IS_WSL() then
+    require 'wsl'
+end
 
-vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight when yanking (copying) text',
-    group = vim.api.nvim_create_augroup('custom-highlight-yank', { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+-- if there are problems deleting ~/.local/share/nvim/lazy/lazy.nvim might help
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
+require("lazy").setup({
+    spec = {
+        { import = "plugins" },
+    },
+    install = { colorscheme = { "habamax" } },
+    checker = { enabled = false },
 })
-
--- Check is using WSL
-local function is_wsl()
-    local f = io.open("/proc/version", "r")
-    if f then
-        local content = f:read("*all")
-        f:close()
-        if content:lower():find("microsoft") then
-            return true
-        end
-    end
-    return vim.env.WSL_INTEROP ~= nil or vim.env.WSL_DISTRO_NAME ~= nil
-end
-
-if is_wsl() then
-    vim.cmd([[
-        let g:clipboard = {
-          \   'name': 'WslClipboard',
-          \   'copy': {
-          \      '+': 'clip.exe',
-          \      '*': 'clip.exe',
-          \    },
-          \   'paste': {
-          \      '+': 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-          \      '*': 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-          \   },
-          \   'cache_enabled': 0,
-          \ }
-    ]])
-end
-
-if not Vscode then
-    local harpoon = require("harpoon")
-    harpoon:setup()
-
-    vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-    vim.keymap.set("n", "<M-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-    vim.keymap.set("n", "<M-1>", function() harpoon:list():select(1) end)
-    vim.keymap.set("n", "<M-2>", function() harpoon:list():select(2) end)
-    vim.keymap.set("n", "<M-3>", function() harpoon:list():select(3) end)
-    vim.keymap.set("n", "<M-4>", function() harpoon:list():select(4) end)
-end
-
-vim.lsp.config['clangd'] = {
-    cmd = { 'clangd' },
-    root_markers = { '.clangd', 'compile_commands.json', '.git' },
-    filetypes = { 'c', 'cpp' },
-    capabilities = {
-        textDocument = {
-            semanticTokens = {
-                multilineTokenSupport = true,
-            }
-        }
-    }
-}
-
-vim.lsp.enable('clangd')

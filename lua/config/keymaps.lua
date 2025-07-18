@@ -14,8 +14,8 @@ vim.keymap.set('n', '<leader>y', '"+y') -- Copy to clipboard
 vim.keymap.set('n', '<leader>p', '"+p') -- Paste from clipboard
 
 -- Move regions in visual mode and keep the selection after move
-vim.keymap.set('v', '<S-J>', ":m '>+1<CR>gv", { noremap = true, silent = true })
-vim.keymap.set('v', '<S-K>', ":m '<-2<CR>gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<S-J>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<S-K>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
 -- TODO: Toggle
 vim.keymap.set('n', '<leader>T', function()
@@ -26,3 +26,7 @@ vim.keymap.set('n', '<C-w>c', ':tabnew<CR>') -- Same as in Tmux
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+vim.keymap.set('n', '<leader>sf', ":find **/*")
+
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
