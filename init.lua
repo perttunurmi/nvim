@@ -30,6 +30,8 @@ require("lazy").setup({
     spec = {
         { import = "plugins" },
     },
-    install = { colorscheme = { "habamax" } },
+    install = { colorscheme = { "retrobox" } },
     checker = { enabled = false },
 })
+
+require 'treesitter'

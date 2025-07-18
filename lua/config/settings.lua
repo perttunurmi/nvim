@@ -1,7 +1,7 @@
 vim.cmd.set 'guicursor+=n-v-c:blinkon500-blinkoff500'
 vim.cmd.set 'guicursor+=i:block'
 vim.opt.updatetime = 200
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 400
 vim.opt.ttimeoutlen = 0
 vim.opt.confirm = true
 
