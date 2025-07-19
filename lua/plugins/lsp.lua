@@ -1,6 +1,7 @@
 return {
     {
         'folke/lazydev.nvim',
+        dependencies = { "nvim-tree/nvim-web-devicons", "echasnovski/mini.icons" },
         ft = 'lua',
         opts = {
             library = {
@@ -34,9 +35,9 @@ return {
                     end
 
                     if client:supports_method('textDocument/completion') then
-                        local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
-                        client.server_capabilities.completionProvider.triggerCharacters = chars
-                        vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+                        -- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
+                        -- client.server_capabilities.completionProvider.triggerCharacters = chars
+                        vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = false })
                     end
                 end
             })
@@ -61,7 +62,6 @@ return {
             vim.lsp.enable('cssls')
             vim.lsp.enable('eslint')
             vim.lsp.enable('bashls')
-            vim.lsp.enable('ccls')
             vim.lsp.enable('just-lsp')
             vim.lsp.enable('pyright')
             vim.lsp.enable('nixd')

@@ -42,7 +42,7 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
 
 vim.diagnostic.config {
-    signs = false,
+    signs = true,
 }
 
 vim.o.completeopt = vim.o.completeopt .. ",noselect,noinsert"
