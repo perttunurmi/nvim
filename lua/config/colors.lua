@@ -1,6 +1,6 @@
 Colors = function()
     -- Normal
-    vim.cmd.hi 'Normal guibg=none'
+    vim.cmd.hi 'Normal guibg=none guifg=none'
     vim.cmd.hi 'NormalFloat guibg=none'
     vim.cmd.hi 'NormalNC guibg=none'
     vim.cmd.hi 'NormalNb guibg=none'
@@ -26,7 +26,11 @@ Colors = function()
     vim.cmd.hi 'markdownCodeBlock guifg=lightgreen'
     vim.cmd.hi 'Title guifg=#E95678'
     vim.cmd.hi 'markdownBold gui=bold'
-end
 
-vim.cmd.colorscheme 'retrobox'
-Colors()
+    vim.cmd.hi 'VertSplit guibg=none'
+    vim.cmd.hi 'StatusLine gui=bold'
+    vim.cmd.hi 'NonText guifg=grey'
+    vim.cmd.hi 'Visual guifg=#5f8787 guibg=white'
+
+    vim.cmd.hi 'Identifier guifg=non'
+end

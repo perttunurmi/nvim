@@ -1,17 +1,19 @@
 vim.cmd.set 'guicursor+=n-v-c:blinkon500-blinkoff500'
 vim.cmd.set 'guicursor+=i:block'
-vim.opt.updatetime = 200
+vim.opt.updatetime = 5000
 vim.opt.timeoutlen = 400
-vim.opt.ttimeoutlen = 0
+vim.opt.ttimeoutlen = 5000
 vim.opt.confirm = true
 
-vim.opt.colorcolumn = '80'
+vim.opt.termguicolors = true
+
+vim.opt.colorcolumn = '100'
 vim.opt.cursorline = false
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.number = true
+vim.opt.number = false
 vim.opt.relativenumber = true
 vim.opt.showmode = true
 vim.opt.wrap = false
@@ -40,10 +42,9 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.signcolumn = 'yes'
-
-vim.diagnostic.config {
-    signs = true,
-}
+vim.opt.signcolumn = 'no'
 
 vim.o.completeopt = vim.o.completeopt .. ",noselect,noinsert"
 vim.opt.pumheight = 10
+
+vim.o.laststatus = 0

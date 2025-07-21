@@ -14,9 +14,22 @@ return {
         'neovim/nvim-lspconfig',
         dependencies = { 'mfussenegger/nvim-jdtls' },
         config = function()
-            vim.diagnostic.config { virtual_lines = false, virtual_text = true }
+            -- lsp floating window border
+            local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+            ---@diagnostic disable-next-line: duplicate-set-field
+            function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+                opts = opts or {}
+                opts.border = opts.border or 'single'
 
-            vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format)
+                return orig_util_open_floating_preview(contents, syntax, opts, ...)
+            end
+
+            vim.diagnostic.config {
+                virtual_text = false,
+                signs = false,
+                virtual_lines = { current_line = true },
+            }
+
             vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
             vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
@@ -58,6 +71,7 @@ return {
 
             vim.lsp.enable('lua_ls')
             vim.lsp.enable('clangd')
+            vim.lsp.enable('ccls')
             vim.lsp.enable('html')
             vim.lsp.enable('cssls')
             vim.lsp.enable('eslint')
@@ -65,6 +79,7 @@ return {
             vim.lsp.enable('just-lsp')
             vim.lsp.enable('pyright')
             vim.lsp.enable('nixd')
+            vim.lsp.enable('ts_ls')
         end
     },
 }

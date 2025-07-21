@@ -35,3 +35,6 @@ require("lazy").setup({
 })
 
 require 'treesitter'
+
+vim.cmd.colorscheme 'habamax'
+Colors()
