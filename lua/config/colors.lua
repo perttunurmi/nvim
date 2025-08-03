@@ -6,13 +6,13 @@ Colors = function()
     vim.cmd.hi 'NormalNb guibg=none'
     vim.cmd.hi 'NormalSB guibg=none'
     vim.cmd.hi 'ColorColumn guibg=NvimDarkGrey3'
-    vim.cmd.hi 'ColorColumn guibg=darkred'
+    -- vim.cmd.hi 'ColorColumn guibg=darkred'
     vim.cmd.hi 'LineNr guibg=none gui=bold'
     vim.cmd.hi 'SignColumn guibg=none'
 
     -- Netrw colors
-    vim.cmd.hi 'Directory guifg=pink'
-    vim.cmd.hi 'NetrwClassify guifg=white'
+    -- vim.cmd.hi 'Directory guifg=pink'
+    -- vim.cmd.hi 'NetrwClassify guifg=white'
 
     -- Diagnostics
     vim.cmd.hi 'DiagnosticHint guibg=#212121'
@@ -23,9 +23,9 @@ Colors = function()
 
     -- Treesitter
     vim.cmd.hi 'TreeSitterContext guibg=#333842'
-    vim.cmd.hi 'markdownCodeBlock guifg=lightgreen'
-    vim.cmd.hi 'Title guifg=#E95678'
-    vim.cmd.hi 'markdownBold gui=bold'
+    -- vim.cmd.hi 'markdownCodeBlock guifg=lightgreen'
+    -- vim.cmd.hi 'Title guifg=#E95678'
+    -- vim.cmd.hi 'markdownBold gui=bold'
 
     vim.cmd.hi 'VertSplit guibg=none'
     vim.cmd.hi 'StatusLine gui=bold'
@@ -33,4 +33,5 @@ Colors = function()
     vim.cmd.hi 'Visual guifg=#5f8787 guibg=white'
 
     vim.cmd.hi 'Identifier guifg=non'
+    vim.cmd.hi 'LspReferenceText guifg=none guibg=none'
 end

@@ -4,3 +4,8 @@ local config = {
 }
 
 require('jdtls').start_or_attach(config)
+
+vim.keymap.set('n', '<F5>', function()
+    vim.cmd 'vsplit | terminal java -jar ./target/*.jar'
+    vim.cmd 'quit'
+end)

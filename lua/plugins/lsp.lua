@@ -25,27 +25,27 @@ return {
             end
 
             vim.diagnostic.config {
-                virtual_text = false,
+                virtual_text = true,
                 signs = false,
-                virtual_lines = { current_line = true },
+                -- virtual_lines = { current_line = true },
+                virtual_lines = false,
             }
 
             vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
             vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
             vim.api.nvim_create_autocmd('LspAttach', {
-                group = vim.api.nvim_create_augroup('my.lsp', {}),
                 callback = function(args)
                     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
-                    if client:supports_method('textDocument/implementation') then
+                    -- if client:supports_method('textDocument/implementation') then
                         -- Create a keymap for vim.lsp.buf.implementation ...
                         vim.keymap.set("n", "<leader>sws", function() vim.lsp.buf.workspace_symbol() end)
                         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end)
                         vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
                         vim.keymap.set("n", "<leader>srr", function() vim.lsp.buf.references() end)
                         vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end)
-                    end
+                    -- end
 
                     if client:supports_method('textDocument/completion') then
                         -- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
@@ -77,9 +77,10 @@ return {
             vim.lsp.enable('eslint')
             vim.lsp.enable('bashls')
             vim.lsp.enable('just-lsp')
-            vim.lsp.enable('pyright')
+            vim.lsp.enable('basedpyright')
             vim.lsp.enable('nixd')
             vim.lsp.enable('ts_ls')
+            vim.lsp.enable('hyprls')
         end
     },
 }

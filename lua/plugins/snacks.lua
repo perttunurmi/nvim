@@ -1,6 +1,7 @@
 return {
     {
         "folke/snacks.nvim",
+        enabled = true,
         priority = 1000,
         lazy = false,
         ---@type snacks.Config
@@ -24,7 +25,7 @@ return {
                 left = { "fold", "git" },   -- priority of signs on the right (high to low)
                 right = { "mark", "sign" }, -- priority of signs on the left (high to low)
             },
-            words = { enabled = true },
+            words = { enabled = false },
             styles = {
                 notification = {
                     -- wo = { wrap = true } -- Wrap notifications

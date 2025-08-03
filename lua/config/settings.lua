@@ -1,8 +1,8 @@
 vim.cmd.set 'guicursor+=n-v-c:blinkon500-blinkoff500'
 vim.cmd.set 'guicursor+=i:block'
-vim.opt.updatetime = 5000
+vim.opt.updatetime = 500
 vim.opt.timeoutlen = 400
-vim.opt.ttimeoutlen = 5000
+vim.opt.ttimeoutlen = 500
 vim.opt.confirm = true
 
 vim.opt.termguicolors = true
@@ -46,5 +46,3 @@ vim.opt.signcolumn = 'no'
 
 vim.o.completeopt = vim.o.completeopt .. ",noselect,noinsert"
 vim.opt.pumheight = 10
-
-vim.o.laststatus = 0
