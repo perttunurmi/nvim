@@ -46,3 +46,5 @@ vim.opt.signcolumn = 'no'
 
 vim.o.completeopt = vim.o.completeopt .. ",noselect,noinsert"
 vim.opt.pumheight = 10
+
+vim.opt.backupcopy = "yes"
