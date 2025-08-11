@@ -30,11 +30,8 @@ require("lazy").setup({
     spec = {
         { import = "plugins" },
     },
-    install = { colorscheme = { "retrobox" } },
+    install = { colorscheme = { "default" } },
     checker = { enabled = false },
 })
 
 require 'treesitter'
-
--- vim.cmd.colorscheme 'habamax'
--- Colors()

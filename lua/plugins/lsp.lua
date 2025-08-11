@@ -12,7 +12,9 @@ return {
     },
     {
         'neovim/nvim-lspconfig',
-        dependencies = { 'mfussenegger/nvim-jdtls' },
+        dependencies = {
+            'mfussenegger/nvim-jdtls',
+        },
         config = function()
             -- lsp floating window border
             local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
@@ -20,6 +22,7 @@ return {
             function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
                 opts = opts or {}
                 opts.border = opts.border or 'single'
+                vim.cmd 'hi NormalFloat guibg=none'
 
                 return orig_util_open_floating_preview(contents, syntax, opts, ...)
             end
@@ -39,12 +42,12 @@ return {
                     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
                     -- if client:supports_method('textDocument/implementation') then
-                        -- Create a keymap for vim.lsp.buf.implementation ...
-                        vim.keymap.set("n", "<leader>sws", function() vim.lsp.buf.workspace_symbol() end)
-                        vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end)
-                        vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
-                        vim.keymap.set("n", "<leader>srr", function() vim.lsp.buf.references() end)
-                        vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end)
+                    -- Create a keymap for vim.lsp.buf.implementation ...
+                    vim.keymap.set("n", "<leader>sws", function() vim.lsp.buf.workspace_symbol() end)
+                    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end)
+                    vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
+                    vim.keymap.set("n", "<leader>srr", function() vim.lsp.buf.references() end)
+                    vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end)
                     -- end
 
                     if client:supports_method('textDocument/completion') then
@@ -69,18 +72,37 @@ return {
                 root_markers = { '.git', 'Justfile', '.gitignore' },
             })
 
-            vim.lsp.enable('lua_ls')
-            vim.lsp.enable('clangd')
-            vim.lsp.enable('ccls')
-            vim.lsp.enable('html')
-            vim.lsp.enable('cssls')
-            vim.lsp.enable('eslint')
-            vim.lsp.enable('bashls')
-            vim.lsp.enable('just-lsp')
-            vim.lsp.enable('basedpyright')
-            vim.lsp.enable('nixd')
-            vim.lsp.enable('ts_ls')
-            vim.lsp.enable('hyprls')
-        end
+            local servers = {
+                'lua_ls',
+                'clangd',
+                'ccls',
+                'html',
+                'cssls',
+                'bashls',
+                'just-lsp',
+                'basedpyright',
+                'nixd',
+                'ts_ls',
+                'hyprls'
+            }
+
+            vim.lsp.enable(servers)
+        end,
+    },
+    {
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
+        dependencies = {
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
+        },
+        opts = {},
+    },
+    {
+        "mason-org/mason-lspconfig.nvim",
+        opts = {},
+        dependencies = {
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
+        },
     },
 }

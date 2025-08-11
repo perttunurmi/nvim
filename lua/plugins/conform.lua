@@ -24,7 +24,8 @@ return {
                     ".prettierrc.json5",
                     ".prettierrc.js",
                     ".editorconfig",
-                }, config_path = ".prettierrc.json",
+                },
+                config_path = ".prettierrc.json",
             },
 
             notify_on_error = false,
