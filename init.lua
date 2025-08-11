@@ -34,4 +34,8 @@ require("lazy").setup({
     checker = { enabled = false },
 })
 
+vim.cmd.hi 'Normal guibg=none'
+vim.cmd.hi 'NormalNC guibg=none'
+vim.cmd.hi 'MsgArea guibg=none'
+
 require 'treesitter'
