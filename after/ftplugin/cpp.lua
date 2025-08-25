@@ -1,6 +1,6 @@
 vim.keymap.set('n', '<F5>', function()
-    vim.cmd 'vsplit | terminal make && ./a.out'
-    vim.cmd 'quit'
+  vim.cmd 'vsplit | terminal make && ./a.out'
+  vim.cmd 'quit'
 end)
 
 vim.keymap.set('n', '<leader>m', function()

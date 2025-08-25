@@ -14,6 +14,7 @@ return {
         'neovim/nvim-lspconfig',
         dependencies = {
             'mfussenegger/nvim-jdtls',
+            'saghen/blink.cmp',
         },
         config = function()
             -- lsp floating window border
@@ -58,7 +59,7 @@ return {
                 end
             })
 
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            local capabilities = require('blink.cmp').get_lsp_capabilities()
             capabilities.textDocument.completion.completionItem.snippetSupport = true
 
             vim.lsp.config('*', {
@@ -84,7 +85,6 @@ return {
 
                 -- js, html, css
                 'ts_ls',
-
                 'html',
 
                 'cssls',
@@ -93,25 +93,10 @@ return {
                 'stylelint',
                 'tailwindcss',
 
+                'hyprls',
             }
 
             vim.lsp.enable(servers)
         end,
-    },
-    {
-        'WhoIsSethDaniel/mason-tool-installer.nvim',
-        dependencies = {
-            { "mason-org/mason.nvim", opts = {} },
-            "neovim/nvim-lspconfig",
-        },
-        opts = {},
-    },
-    {
-        "mason-org/mason-lspconfig.nvim",
-        opts = {},
-        dependencies = {
-            { "mason-org/mason.nvim", opts = {} },
-            "neovim/nvim-lspconfig",
-        },
     },
 }
