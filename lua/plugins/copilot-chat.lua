@@ -1,6 +1,11 @@
 return {
     {
         "CopilotC-Nvim/CopilotChat.nvim",
+        enable = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'zbirenbaum/copilot.lua'
+        },
         branch = "main",
         cmd = "CopilotChat",
         opts = function()

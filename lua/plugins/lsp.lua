@@ -76,14 +76,23 @@ return {
                 'lua_ls',
                 'clangd',
                 'ccls',
-                'html',
-                'cssls',
                 'bashls',
                 'just-lsp',
                 'basedpyright',
                 'nixd',
+                'hyprls',
+
+                -- js, html, css
                 'ts_ls',
-                'hyprls'
+
+                'html',
+
+                'cssls',
+                'cssmodules_ls',
+                'css_variables',
+                'stylelint',
+                'tailwindcss',
+
             }
 
             vim.lsp.enable(servers)

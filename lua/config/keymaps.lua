@@ -4,7 +4,7 @@ vim.keymap.set('v', '<space>x', ':lua<CR>')
 vim.keymap.set('n', '<M-k>', '<cmd>cnext<CR>')
 vim.keymap.set('n', '<M-j>', '<cmd>cprev<CR>')
 
-vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
+vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>', { noremap = true, silent = true })
 
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y') -- Copy to clipboard
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>p', '"+p') -- Paste from clipboard

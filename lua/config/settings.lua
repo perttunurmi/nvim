@@ -2,7 +2,7 @@ vim.cmd.set 'guicursor+=n-v-c:blinkon500-blinkoff500'
 vim.cmd.set 'guicursor+=i:block'
 vim.opt.updatetime = 500
 vim.opt.timeoutlen = 400
-vim.opt.ttimeoutlen = 500
+vim.opt.ttimeoutlen = 0
 vim.opt.confirm = true
 
 vim.opt.termguicolors = true
@@ -22,7 +22,7 @@ vim.opt.cursorline = false
 vim.opt.mouse = 'a'
 
 vim.opt.scrolloff = 10
-vim.opt.sidescrolloff = 10
+vim.opt.sidescrolloff = 15
 
 vim.opt.smartindent = true
 vim.opt.smarttab = true

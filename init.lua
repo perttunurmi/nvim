@@ -37,5 +37,3 @@ require("lazy").setup({
 vim.cmd.hi 'Normal guibg=none'
 vim.cmd.hi 'NormalNC guibg=none'
 vim.cmd.hi 'MsgArea guibg=none'
-
-require 'treesitter'
