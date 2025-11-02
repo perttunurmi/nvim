@@ -95,7 +95,6 @@ return {
 
                 'kotlin_language_server',
 
-                'hyprls',
                 'racket_langserver'
             }
 
