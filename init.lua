@@ -34,6 +34,14 @@ require("lazy").setup({
     checker = { enabled = false },
 })
 
+
+vim.cmd("colorscheme default")
 vim.cmd.hi 'Normal guibg=none'
+vim.cmd.hi 'NormalFloat guibg=none'
 vim.cmd.hi 'NormalNC guibg=none'
 vim.cmd.hi 'MsgArea guibg=none'
+
+vim.cmd.hi 'Visual guifg=black guibg=lightblue'
+vim.cmd.hi 'String guifg=#28af38'
+vim.cmd.hi 'Function guifg=#21C992'
+vim.cmd.hi 'Identifier guifg=#00A3F2'

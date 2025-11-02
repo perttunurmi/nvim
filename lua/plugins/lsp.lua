@@ -93,7 +93,10 @@ return {
                 'stylelint',
                 'tailwindcss',
 
+                'kotlin_language_server',
+
                 'hyprls',
+                'racket_langserver'
             }
 
             vim.lsp.enable(servers)

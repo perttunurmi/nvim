@@ -13,7 +13,7 @@ vim.opt.cursorline = false
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.number = false
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.showmode = true
 vim.opt.wrap = false
