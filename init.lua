@@ -34,7 +34,6 @@ require("lazy").setup({
     checker = { enabled = false },
 })
 
-
 vim.cmd("colorscheme default")
 vim.cmd.hi 'Normal guibg=none'
 vim.cmd.hi 'NormalFloat guibg=none'
