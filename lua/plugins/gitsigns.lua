@@ -9,6 +9,7 @@ return {
                 topdelete = { text = '‾' },
                 changedelete = { text = '~' },
             },
+            numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
         },
     }
 }

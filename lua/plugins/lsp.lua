@@ -95,7 +95,7 @@ return {
 
                 'kotlin_language_server',
 
-                'racket_langserver'
+                'racket_langserver',
             }
 
             vim.lsp.enable(servers)
