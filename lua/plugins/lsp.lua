@@ -79,7 +79,7 @@ return {
                 'ccls',
                 'bashls',
                 'just-lsp',
-                'basedpyright',
+                'pyright',
                 'nixd',
                 'hyprls',
 
@@ -95,6 +95,7 @@ return {
 
                 'kotlin_language_server',
 
+                'typst_lsp',
                 'racket_langserver',
             }
 
