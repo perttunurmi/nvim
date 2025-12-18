@@ -13,7 +13,7 @@ return {
     {
         'neovim/nvim-lspconfig',
         dependencies = {
-            'mfussenegger/nvim-jdtls',
+            'nvim-java/nvim-java',
             'saghen/blink.cmp',
         },
         config = function()
@@ -93,7 +93,7 @@ return {
                 'stylelint',
                 'tailwindcss',
 
-                'kotlin_language_server',
+                'zls',
 
                 'typst_lsp',
                 'racket_langserver',

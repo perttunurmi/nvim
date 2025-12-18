@@ -4,13 +4,14 @@ vim.g.maplocalleader = "\\"
 require 'config'
 
 if vim.g.vscode then
+    require 'config.vscode'
     return 0
 end
 
 -- WSL Clipboard
 require 'lib.is_wsl'
 if IS_WSL() then
-    require 'wsl'
+    require 'lib.wsl_extra'
 end
 
 -- if there are problems deleting ~/.local/share/nvim/lazy/lazy.nvim might help
@@ -44,6 +45,4 @@ vim.cmd.hi 'LineNr guibg=none guifg=grey'
 vim.cmd.hi 'FloatBorder guibg=none'
 -- vim.cmd.hi 'Visual guifg=black guibg=lightblue'
 
--- vim.cmd.hi 'String guifg=#28af38'
--- vim.cmd.hi 'Function guifg=#21C992'
--- vim.cmd.hi 'Identifier guifg=#00A3F2'
+require('colors')

@@ -7,7 +7,7 @@ return {
         ---@type snacks.Config
         opts = {
             bigfile = { enabled = true },
-            image = { enabled = false },
+            image = { enabled = true },
             dashboard = { enabled = false },
             explorer = { enabled = false },
             indent = { enabled = false },
@@ -22,7 +22,8 @@ return {
             scroll = { enabled = false },
             statuscolumn = {
                 enabled = false,
-                left = { "fold", "git" },   -- priority of signs on the right (high to low)
+                -- left = { "fold", "git", "mark" },   -- priority of signs on the right (high to low)
+                left = {},
                 right = { "mark", "sign" }, -- priority of signs on the left (high to low)
             },
             words = { enabled = false },
@@ -36,7 +37,7 @@ return {
             { "<leader>ss",      function() Snacks.picker() end },
             -- Top Pickers & Explorer
             { "<leader><space>", function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
-            { "<leader>,",       function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
+            { "<leader>bb",       function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
             { "<leader>/",       function() Snacks.picker.grep() end,                                    desc = "Grep" },
             { "<leader>:",       function() Snacks.picker.command_history() end,                         desc = "Command History" },
             { "<leader>n",       function() Snacks.picker.notifications() end,                           desc = "Notification History" },
