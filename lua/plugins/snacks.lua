@@ -37,7 +37,7 @@ return {
             { "<leader>ss",      function() Snacks.picker() end },
             -- Top Pickers & Explorer
             { "<leader><space>", function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
-            { "<leader>bb",       function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
+            { "<leader>bb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
             { "<leader>/",       function() Snacks.picker.grep() end,                                    desc = "Grep" },
             { "<leader>:",       function() Snacks.picker.command_history() end,                         desc = "Command History" },
             { "<leader>n",       function() Snacks.picker.notifications() end,                           desc = "Notification History" },
@@ -89,7 +89,7 @@ return {
             { "gr",              function() Snacks.picker.lsp_references() end,                          nowait = true,                     desc = "References" },
             { "gI",              function() Snacks.picker.lsp_implementations() end,                     desc = "Goto Implementation" },
             { "gy",              function() Snacks.picker.lsp_type_definitions() end,                    desc = "Goto T[y]pe Definition" },
-            -- { "<leader>ss",      function() Snacks.picker.lsp_symbols() end,                             desc = "LSP Symbols" },
+            { "<leader>ws",      function() Snacks.picker.lsp_symbols() end,                             desc = "LSP Symbols" },
             { "<leader>sS",      function() Snacks.picker.lsp_workspace_symbols() end,                   desc = "LSP Workspace Symbols" },
             -- Other
             { "<leader>.",       function() Snacks.scratch() end,                                        desc = "Toggle Scratch Buffer" },

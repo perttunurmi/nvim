@@ -1,7 +1,7 @@
 vim.cmd.set 'guicursor+=n-v-c:blinkon500-blinkoff500'
 vim.cmd.set 'guicursor+=i:block'
--- vim.opt.timeoutlen = 400
--- vim.opt.updatetime = 500
+vim.opt.timeoutlen = 300
+vim.opt.updatetime = 250
 -- vim.opt.ttimeoutlen = 0
 vim.opt.confirm = true
 
@@ -18,7 +18,6 @@ vim.opt.relativenumber = true
 vim.opt.showmode = true
 vim.opt.wrap = false
 
-vim.opt.cursorline = false
 vim.opt.mouse = 'a'
 
 vim.opt.scrolloff = 10
@@ -48,3 +47,6 @@ vim.o.completeopt = vim.o.completeopt .. ",noselect,noinsert"
 vim.opt.pumheight = 10
 
 vim.opt.backupcopy = "yes"
+
+vim.o.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }

@@ -73,30 +73,37 @@ return {
                 root_markers = { '.git', 'Justfile', '.gitignore' },
             })
 
+            vim.lsp.config('basedpyright', {
+                settings = {
+                    basedpyright = {
+                        analysis = {
+                            diagnosticMode = "openFilesOnly",
+                            typeCheckingMode = "standard"
+                        }
+                    }
+                }
+            })
+
             local servers = {
                 'lua_ls',
                 'clangd',
-                'ccls',
                 'bashls',
                 'just-lsp',
-                'pyright',
-                'nixd',
-                'hyprls',
 
-                -- js, html, css
+                'basedpyright',
+
+                'nixd',
+                'nil',
+                'hyprls',
+                'gopls',
+
                 'ts_ls',
                 'html',
-
                 'cssls',
                 'cssmodules_ls',
                 'css_variables',
-                'stylelint',
-                'tailwindcss',
 
                 'zls',
-
-                'typst_lsp',
-                'racket_langserver',
             }
 
             vim.lsp.enable(servers)

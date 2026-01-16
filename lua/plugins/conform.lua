@@ -5,7 +5,7 @@ return {
         cmd = { 'ConformInfo' },
         keys = {
             {
-                '<leader>gcf',
+                '<leader>cf',
                 function()
                     require('conform').format { async = true, lsp_format = 'fallback' }
                 end,
@@ -31,14 +31,15 @@ return {
             notify_on_error = false,
             formatters_by_ft = {
                 lua = { 'stylua' },
-                python = { "isort", "black" },
+                python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
                 nix = { "alejandra" },
                 java = { "google-java-format" },
                 c = { 'clang-format' },
-                html = { 'htmlbeautifier' },
+                html = { "prettierd", "prettier", 'htmlbeautifier' },
+                css = { "prettierd", "prettier" },
 
                 -- You can use 'stop_after_first' to run the first available formatter from the list
-                -- javascript = { "prettierd", "prettier", stop_after_first = true },
+                javascript = { "prettierd", "prettier", stop_after_first = true },
 
             },
         },

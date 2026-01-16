@@ -1,2 +1,4 @@
 lazy-lock.json
 lua/treesitter/
+project_manager.json
+code_runner.json
