@@ -10,6 +10,8 @@ vim.opt.termguicolors = true
 vim.opt.colorcolumn = '100'
 vim.opt.cursorline = false
 
+vim.o.laststatus = 1
+
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 

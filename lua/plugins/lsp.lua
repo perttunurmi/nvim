@@ -62,6 +62,24 @@ return {
             local capabilities = require('blink.cmp').get_lsp_capabilities()
             capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+            local servers = {
+                'lua_ls',
+                'clangd',
+                'bashls',
+                'basedpyright',
+                'nixd',
+                'nil',
+                'hyprls',
+                'gopls',
+                'ts_ls',
+                'html',
+                'cssls',
+                'cssmodules_ls',
+                'css_variables',
+
+                'zls',
+            }
+
             vim.lsp.config('*', {
                 capabilities = {
                     textDocument = {
@@ -83,28 +101,6 @@ return {
                     }
                 }
             })
-
-            local servers = {
-                'lua_ls',
-                'clangd',
-                'bashls',
-                'just-lsp',
-
-                'basedpyright',
-
-                'nixd',
-                'nil',
-                'hyprls',
-                'gopls',
-
-                'ts_ls',
-                'html',
-                'cssls',
-                'cssmodules_ls',
-                'css_variables',
-
-                'zls',
-            }
 
             vim.lsp.enable(servers)
         end,
