@@ -76,6 +76,10 @@ return {
                 'cssls',
                 'cssmodules_ls',
                 'css_variables',
+                'taplo',
+                'tinymist',
+
+                'jdtls',
 
                 'zls',
             }
