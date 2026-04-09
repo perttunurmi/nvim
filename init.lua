@@ -14,6 +14,7 @@ if IS_WSL() then
     require 'lib.wsl_extra'
 end
 
+
 -- if there are problems deleting ~/.local/share/nvim/lazy/lazy.nvim might help
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 ---@diagnostic disable-next-line: undefined-field
