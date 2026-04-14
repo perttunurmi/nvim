@@ -5,23 +5,6 @@ return {
             local config_dir = vim.fn.stdpath("config")
             local runner = config_dir .. '/code_runner.json'
             local project = config_dir .. '/project_manager.json'
-
-            if vim.fn.filereadable(runner) == 0 then
-                local file = io.open(runner, "w")
-                if file then
-                    file:write("{}")
-                    file:close()
-                end
-            end
-
-            if vim.fn.filereadable(project) == 0 then
-                local file = io.open(project, "w")
-                if file then
-                    file:write("{}")
-                    file:close()
-                end
-            end
-
             require('code_runner').setup {
                 filetype_path = runner,
                 project_path = project,

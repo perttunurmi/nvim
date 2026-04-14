@@ -13,9 +13,9 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-keymap({"n", "v"}, "<leader>y", '"+y', opts)
+keymap({ "n", "v" }, "<leader>y", '"+y', opts)
 
-keymap({"n", "v"}, "<leader>p", '"+p', opts)
+keymap({ "n", "v" }, "<leader>p", '"+p', opts)
 
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -30,11 +30,10 @@ keymap("v", "p", '"_dP', opts)
 keymap("n", "<Esc>", "<Esc>:noh<CR>", opts)
 
 
-keymap({"n", "v"}, "<leader>cb", action('editor.debug.action.toggleBreakpoint'))
-keymap({"n", "v"}, "<leader>ca", action('editor.action.quickFix'))
-keymap({"n", "v"}, "<leader>sp", action('workbench.actions.view.problems'))
-keymap({"n", "v"}, "<leader>sf", action('workbench.action.quickOpen'))
-keymap({"n", "v"}, "<leader>:", action('workbench.action.showCommands'))
-keymap({"n", "v"}, "<leader>gcr", action('code-runner.run'))
-keymap({"n", "v"}, "<leader>gcf", action('editor.action.formatDocument'))
-keymap({"n", "v"}, "<leader>e", action('voil.openPanelCurrentDir'))
+keymap({ "n", "v" }, "<leader>cb", action('editor.debug.action.toggleBreakpoint'))
+keymap({ "n", "v" }, "<leader>ca", action('editor.action.quickFix'))
+keymap({ "n", "v" }, "<leader>sp", action('workbench.actions.view.problems'))
+keymap({ "n", "v" }, "<leader>sf", action('workbench.action.quickOpen'))
+keymap({ "n", "v" }, "<leader>:", action('workbench.action.showCommands'))
+keymap({ "n", "v" }, "<leader>gcr", action('code-runner.run'))
+keymap({ "n", "v" }, "<leader>gcf", action('editor.action.formatDocument'))

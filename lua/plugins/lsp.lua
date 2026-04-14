@@ -63,12 +63,14 @@ return {
             capabilities.textDocument.completion.completionItem.snippetSupport = true
 
             local servers = {
+                'metals',
                 'lua_ls',
                 'clangd',
                 'bashls',
                 'basedpyright',
-                'nixd',
-                'nil',
+                'just',
+                -- 'nixd',
+                'nil_ls',
                 'hyprls',
                 'gopls',
                 'ts_ls',

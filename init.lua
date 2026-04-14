@@ -37,10 +37,7 @@ require('lazy').setup {
     checker = { enabled = false },
 }
 
--- require('config.colors')
-
 vim.cmd 'colorscheme nordic'
--- require 'colors'
 
 vim.cmd.hi 'Normal guibg=none'
 vim.cmd.hi 'NormalFloat guibg=none'

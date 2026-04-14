@@ -1,20 +1,20 @@
 return {
   "zbirenbaum/copilot.lua",
-  enabled = false,
+  enabled = true,
   cmd = "Copilot",
   build = ":Copilot auth",
   event = "BufReadPost",
   opts = {
     suggestion = {
       -- enabled = not vim.g.ai_cmp,
-      enabled = false,
+      enabled = true,
       auto_trigger = false,
       hide_during_completion = false,
       keymap = {
-        accept = false, -- handled by nvim-cmp / blink.cmp
+        accept = "<M-a>",
         next = "<M-]>",
         prev = "<M-[>",
-        dismiss = "<C-]>",
+        dismiss = "<M-d>",
       },
     },
     panel = { enabled = false },
