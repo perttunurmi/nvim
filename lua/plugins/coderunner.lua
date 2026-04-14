@@ -2,9 +2,12 @@ return {
     {
         "CRAG666/code_runner.nvim",
         config = function()
+            local config_dir = vim.fn.stdpath("config")
+            local runner = config_dir .. '/code_runner.json'
+            local project = config_dir .. '/project_manager.json'
             require('code_runner').setup {
-                filetype_path = vim.fn.expand('~/.config/nvim/code_runner.json'),
-                project_path = vim.fn.expand('~/.config/nvim/project_manager.json'),
+                filetype_path = runner,
+                project_path = project,
                 term = {
                     position = "vertical",
                     size = 65

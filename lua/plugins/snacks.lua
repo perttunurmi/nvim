@@ -7,7 +7,7 @@ return {
         ---@type snacks.Config
         opts = {
             bigfile = { enabled = true },
-            image = { enabled = true },
+            image = { enabled = false },
             dashboard = { enabled = false },
             explorer = { enabled = false },
             indent = { enabled = false },
@@ -21,7 +21,7 @@ return {
             scope = { enabled = true },
             scroll = { enabled = false },
             statuscolumn = {
-                enabled = false,
+                enabled = true,
                 -- left = { "fold", "git", "mark" },   -- priority of signs on the right (high to low)
                 left = {},
                 right = { "mark", "sign" }, -- priority of signs on the left (high to low)

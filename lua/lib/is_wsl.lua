@@ -1,3 +1,4 @@
+-- If the system is WSL build the file /proc/version should contain the string `microsoft`
 function IS_WSL()
     local f = io.open("/proc/version", "r")
     if f then
@@ -7,5 +8,6 @@ function IS_WSL()
             return true
         end
     end
+
     return vim.env.WSL_INTEROP ~= nil or vim.env.WSL_DISTRO_NAME ~= nil
 end
