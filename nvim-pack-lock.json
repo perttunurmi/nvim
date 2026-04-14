@@ -1,0 +1,16 @@
+{
+  "plugins": {
+    "nvim-lspconfig": {
+      "rev": "8a9378a822719346a0288fa004dab302ca3c0a8f",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "oil.nvim": {
+      "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "vim-wakatime": {
+      "rev": "cb7ba055330245b3a9d29f8bb4b82aeb2d52e580",
+      "src": "https://github.com/wakatime/vim-wakatime"
+    }
+  }
+}
