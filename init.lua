@@ -4,7 +4,7 @@ vim.g.maplocalleader = '\\'
 require 'config'
 
 if vim.g.vscode then
-    require 'vscode'
+    require 'config.vscode'
     return 0
 end
 

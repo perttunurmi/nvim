@@ -18,7 +18,7 @@ vim.keymap.set('n', '<C-w>c', '<CMD>tabnew<CR>') -- Same as in Tmux
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -32,3 +32,5 @@ vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "Write file" })
 
 vim.keymap.set("n", "<leader>sf", ":find **/**", { desc = "Open find" })
 vim.keymap.set("n", "<leader>sg", ":grep ", { desc = "Open grep" })
+
+vim.keymap.set("n", "<leader>ps", '<CMD>lua vim.pack.update()<CR>')

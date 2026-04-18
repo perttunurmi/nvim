@@ -1,9 +1,3 @@
-vim.pack.add({
-    'https://github.com/stevearc/oil.nvim',
-})
-
-vim.keymap.set('n', '<leader>e', '<CMD>Oil<CR>', { desc = "Open parent directory" })
-
 require("oil").setup({
     default_file_explorer = true,
     -- Id is automatically added at the beginning, and name at the end
@@ -195,3 +189,5 @@ require("oil").setup({
         border = nil,
     },
 })
+
+vim.keymap.set('n', '<leader>e', '<CMD>Oil<CR>', { desc = "Open parent directory" })

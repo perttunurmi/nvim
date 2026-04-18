@@ -11,12 +11,10 @@ git clone https://github.com/perttunurmi/nvim/ $HOME/.config/nvim
 
 ### For most thing to work correctly you need following dependencies
 
-- Neovim version > 0.11.0
+- Neovim version > 0.12.0
 
 - git
 
 - ripgrep
 
-- fd
-
-- gcc
+- curl
