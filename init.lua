@@ -8,7 +8,6 @@ if vim.g.vscode then
     return 0
 end
 
-
 -- Requires Neovim >= 0.12.0
 -- require all files in ./lua/plugins/
 if vim.pack then
@@ -20,6 +19,6 @@ if vim.pack then
     )
 
     for file in vim.fs.dir(plugin_path) do
-        require('plugins.' .. string.gsub(file, ".lua$", ""))
+        require('plugins.' .. string.gsub(file, '.lua$', ''))
     end
 end

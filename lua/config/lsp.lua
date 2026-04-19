@@ -25,27 +25,27 @@ vim.lsp.config['lua_ls'] = {
             },
             diagnostics = {
                 enable = true,
-                globals = { "vim" },
+                globals = { 'vim' },
             },
             workspace = {
                 library = { vim.env.VIMRUNTIME },
                 checkThirdParty = false,
             },
-        }
-    }
+        },
+    },
 }
 
 vim.lsp.config['nixd'] = {
-    cmd = { "nixd" },
-    filetypes = { "nix" },
-    root_markers = { "flake.nix", ".git" },
+    cmd = { 'nixd' },
+    filetypes = { 'nix' },
+    root_markers = { 'flake.nix', '.git' },
     settings = {
         nixd = {
             nixpkgs = {
-                expr = "import <nixpkgs> { }",
+                expr = 'import <nixpkgs> { }',
             },
             formatting = {
-                command = { "nixfmt" },
+                command = { 'nixfmt' },
             },
             -- options = {
             --     nixos = {
@@ -59,20 +59,18 @@ vim.lsp.config['nixd'] = {
     },
 }
 
-vim.lsp.enable({
-    "pyright",
-    "bashls",
-    "gopls",
-    "lua_ls",
-    "ts_ls",
-    "rust-analyzer",
-    "nixd",
-})
-
+vim.lsp.enable {
+    'pyright',
+    'bashls',
+    'gopls',
+    'lua_ls',
+    'ts_ls',
+    'rust-analyzer',
+    'nixd',
+}
 
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
 vim.keymap.set('n', '<leader>cr', vim.lsp.buf.references)
 vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation)
 vim.keymap.set('n', '<leader>O', vim.lsp.buf.document_symbol)
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
-vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format)

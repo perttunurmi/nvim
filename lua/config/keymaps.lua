@@ -20,7 +20,12 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set(
+    'n',
+    '<leader>q',
+    vim.diagnostic.setloclist,
+    { desc = 'Open diagnostic [Q]uickfix list' }
+)
 
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
@@ -28,9 +33,9 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "Write file" })
+vim.keymap.set('n', '<leader>w', ':write<CR>', { desc = 'Write file' })
 
-vim.keymap.set("n", "<leader>sf", ":find **/**", { desc = "Open find" })
-vim.keymap.set("n", "<leader>sg", ":grep ", { desc = "Open grep" })
+vim.keymap.set('n', '<leader>sf', ':find **/**', { desc = 'Open find' })
+vim.keymap.set('n', '<leader>sg', ':grep ', { desc = 'Open grep' })
 
-vim.keymap.set("n", "<leader>ps", '<CMD>lua vim.pack.update()<CR>')
+vim.keymap.set('n', '<leader>ps', '<CMD>lua vim.pack.update()<CR>')
