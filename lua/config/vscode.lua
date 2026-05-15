@@ -41,6 +41,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
         keymap('n', '-', function()
             vscode.action 'oil-code.open'
         end)
+
         keymap('n', '<leader>e', function()
             vscode.action 'oil-code.open'
         end)
@@ -53,18 +54,23 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
         keymap('n', '-', function()
             vscode.action 'oil-code.openParent'
         end)
+
         keymap('n', '_', function()
             vscode.action 'oil-code.openCwd'
         end)
+
         keymap('n', '<CR>', function()
             vscode.action 'oil-code.select'
         end)
+
         keymap('n', '<C-t>', function()
             vscode.action 'oil-code.selectTab'
         end)
+
         keymap('n', '<C-l>', function()
             vscode.action 'oil-code.refresh'
         end)
+
         keymap('n', '`', function()
             vscode.action 'oil-code.cd'
         end)

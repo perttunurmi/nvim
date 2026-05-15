@@ -1,7 +1,7 @@
+require('vim._core.ui2').enable()
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
-
-require 'config'
 
 if vim.g.vscode then
     require 'config.vscode'
@@ -22,3 +22,5 @@ if vim.pack then
         require('plugins.' .. string.gsub(file, '.lua$', ''))
     end
 end
+
+require 'config'

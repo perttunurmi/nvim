@@ -19,6 +19,8 @@ require('conform').setup {
         typescript = { 'prettierd', 'prettier', stop_after_first = true },
         reactjavascript = { 'prettierd', 'prettier', stop_after_first = true },
         reacttypescript = { 'prettierd', 'prettier', stop_after_first = true },
+        nix = { 'nixfmt' },
+        cpp = { 'clang-format' },
 
         -- You can use a function here to determine the formatters dynamically
         python = function(bufnr)

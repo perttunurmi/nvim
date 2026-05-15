@@ -41,20 +41,9 @@ vim.lsp.config['nixd'] = {
     root_markers = { 'flake.nix', '.git' },
     settings = {
         nixd = {
-            nixpkgs = {
-                expr = 'import <nixpkgs> { }',
-            },
             formatting = {
                 command = { 'nixfmt' },
             },
-            -- options = {
-            --     nixos = {
-            --         expr = '(builtins.getFlake (toString ./.)).nixosConfigurations.<hostname>.options',
-            --     },
-            --     home_manager = {
-            --         expr = '(builtins.getFlake (toString ./.)).homeConfigurations."<username>@<hostname>".options',
-            --     },
-            -- },
         },
     },
 }
@@ -62,11 +51,10 @@ vim.lsp.config['nixd'] = {
 vim.lsp.enable {
     'pyright',
     'bashls',
-    'gopls',
     'lua_ls',
     'ts_ls',
-    'rust-analyzer',
     'nixd',
+    'clangd',
 }
 
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)

@@ -34,7 +34,29 @@ vim.opt.colorcolumn = '100'
 
 vim.opt.grepprg = 'rg --vimgrep'
 
+vim.o.inccommand = 'split'
+
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.o.winborder = 'rounded'
+
+vim.diagnostic.config {
+    update_in_insert = true,
+    severity_sort = true,
+    float = { border = 'rounded', source = 'if_many' },
+    underline = { severity = { min = vim.diagnostic.severity.WARN } },
+
+    virtual_text = true,
+    virtual_lines = false,
+
+    jump = {
+        on_jump = function(_, bufnr)
+            vim.diagnostic.open_float {
+                bufnr = bufnr,
+                scope = 'cursor',
+                focus = false,
+            }
+        end,
+    },
+}
