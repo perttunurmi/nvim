@@ -15,12 +15,27 @@ require('conform').setup {
         go = { 'goimports', 'gofmt' },
         -- You can also customize some of the format options for the filetype
         rust = { 'rustfmt', lsp_format = 'fallback' },
+
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
+
         typescript = { 'prettierd', 'prettier', stop_after_first = true },
-        reactjavascript = { 'prettierd', 'prettier', stop_after_first = true },
-        reacttypescript = { 'prettierd', 'prettier', stop_after_first = true },
+
+        reactjavascript = {
+            'prettierd',
+            'prettier',
+            lsp_format = 'fallback',
+            stop_after_first = true,
+        },
+
+        reacttypescript = {
+            'prettierd',
+            'prettier',
+            lsp_format = 'fallback',
+            stop_after_first = true,
+        },
+
         nix = { 'nixfmt' },
-        cpp = { 'clang-format' },
+        cpp = { 'clang-format', lsp_format = 'fallback' },
 
         -- You can use a function here to determine the formatters dynamically
         python = function(bufnr)

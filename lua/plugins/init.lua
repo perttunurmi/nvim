@@ -4,7 +4,6 @@ vim.pack.add {
     'https://github.com/lewis6991/gitsigns.nvim',
     'https://github.com/romus204/tree-sitter-manager.nvim',
     'https://github.com/sainnhe/gruvbox-material',
-    'https://github.com/j-hui/fidget.nvim',
     'https://github.com/NMAC427/guess-indent.nvim',
 }
 
@@ -15,4 +14,3 @@ vim.keymap.set('n', '<leader>u', require('undotree').open)
 
 require('tree-sitter-manager').setup {}
 require('gitsigns').setup {}
-require('fidget').setup {}

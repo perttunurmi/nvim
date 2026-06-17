@@ -35,7 +35,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<leader>w', ':write<CR>', { desc = 'Write file' })
 
-vim.keymap.set('n', '<leader>sf', ':find **/**', { desc = 'Open find' })
-vim.keymap.set('n', '<leader>sg', ':grep ', { desc = 'Open grep' })
+-- vim.keymap.set('n', '<leader>sf', ':find **/**', { desc = 'Open find' })
+-- vim.keymap.set('n', '<leader>sg', ':grep ', { desc = 'Open grep' })
 
 vim.keymap.set('n', '<leader>ps', '<CMD>lua vim.pack.update()<CR>')
