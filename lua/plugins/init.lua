@@ -4,7 +4,7 @@ vim.pack.add {
     'https://github.com/lewis6991/gitsigns.nvim',
     'https://github.com/romus204/tree-sitter-manager.nvim',
     'https://github.com/sainnhe/gruvbox-material',
-    'https://github.com/NMAC427/guess-indent.nvim',
+    'https://github.com/tpope/vim-sleuth',
 }
 
 vim.cmd 'packadd nvim.undotree'
