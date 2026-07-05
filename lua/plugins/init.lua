@@ -5,6 +5,7 @@ vim.pack.add {
     'https://github.com/romus204/tree-sitter-manager.nvim',
     'https://github.com/sainnhe/gruvbox-material',
     'https://github.com/tpope/vim-sleuth',
+    'https://github.com/ficd0/ashen.nvim',
 }
 
 vim.cmd 'packadd nvim.undotree'

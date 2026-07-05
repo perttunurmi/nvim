@@ -1,6 +1,6 @@
 local hi = vim.cmd.hi
 
-vim.cmd 'colorscheme gruvbox-material'
+vim.cmd 'colorscheme ashen'
 
 hi 'Normal guibg=none'
 hi 'NormalFloat guibg=none'
