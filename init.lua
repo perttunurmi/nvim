@@ -1,4 +1,5 @@
--- require('vim._core.ui2').enable()
+require('vim._core.ui2').enable()
+vim.loader.enable()
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
@@ -7,6 +8,8 @@ if vim.g.vscode then
     require 'config.vscode'
     return 0
 end
+
+require 'config'
 
 -- Requires Neovim >= 0.12.0
 -- require all files in ./lua/plugins/
@@ -23,4 +26,4 @@ if vim.pack then
     end
 end
 
-require 'config'
+require 'theme'

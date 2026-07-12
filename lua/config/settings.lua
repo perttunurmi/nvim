@@ -32,7 +32,9 @@ vim.opt.undofile = true
 
 vim.opt.colorcolumn = '100'
 
-vim.opt.grepprg = 'rg --vimgrep'
+if vim.fn.executable 'rg' then
+    vim.o.grepprg = 'rg --vimgrep'
+end
 
 vim.o.inccommand = 'split'
 
@@ -47,7 +49,7 @@ vim.diagnostic.config {
     float = { border = 'rounded', source = 'if_many' },
     underline = { severity = { min = vim.diagnostic.severity.WARN } },
 
-    virtual_text = true,
+    virtual_text = false,
     virtual_lines = false,
 
     jump = {

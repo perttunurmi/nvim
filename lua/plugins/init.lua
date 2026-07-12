@@ -3,7 +3,6 @@ vim.pack.add {
     'https://github.com/wakatime/vim-wakatime',
     'https://github.com/lewis6991/gitsigns.nvim',
     'https://github.com/romus204/tree-sitter-manager.nvim',
-    'https://github.com/sainnhe/gruvbox-material',
     'https://github.com/tpope/vim-sleuth',
     'https://github.com/ficd0/ashen.nvim',
 }

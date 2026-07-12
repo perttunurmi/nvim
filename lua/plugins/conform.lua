@@ -11,13 +11,9 @@ require('conform').setup {
     -- Map of filetype to formatters
     formatters_by_ft = {
         lua = { 'stylua' },
-        -- Conform will run multiple formatters sequentially
         go = { 'goimports', 'gofmt' },
-        -- You can also customize some of the format options for the filetype
         rust = { 'rustfmt', lsp_format = 'fallback' },
-
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
-
         typescript = { 'prettierd', 'prettier', stop_after_first = true },
 
         reactjavascript = {
@@ -38,6 +34,7 @@ require('conform').setup {
         cpp = { 'clang-format', lsp_format = 'fallback' },
 
         -- You can use a function here to determine the formatters dynamically
+
         python = function(bufnr)
             if require('conform').get_formatter_info('ruff_format', bufnr).available then
                 return { 'ruff_format' }

@@ -59,7 +59,4 @@ vim.lsp.enable {
 }
 
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
-vim.keymap.set('n', '<leader>cr', vim.lsp.buf.references)
-vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation)
-vim.keymap.set('n', '<leader>O', vim.lsp.buf.document_symbol)
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)

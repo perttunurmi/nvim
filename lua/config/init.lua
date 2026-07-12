@@ -1,5 +1,4 @@
 require 'config.autocmds'
 require 'config.settings'
 require 'config.keymaps'
-require 'config.colors'
 require 'config.lsp'
