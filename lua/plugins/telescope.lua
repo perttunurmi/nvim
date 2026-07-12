@@ -1,3 +1,4 @@
+-- This is copied, pasted and modified from https://github.com/nvim-lua/kickstart.nvim
 local function run_build(name, cmd, cwd)
     local result = vim.system(cmd, { cwd = cwd }):wait()
     if result.code ~= 0 then
@@ -81,7 +82,6 @@ vim.keymap.set('n', '<leader>sc', builtin.commands)
 vim.keymap.set('n', '<leader>sb', builtin.buffers)
 vim.keymap.set('n', '<leader>sm', builtin.marks)
 
--- https://github.com/nvim-lua/kickstart.nvim
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('telescope-lsp-attach', { clear = true }),
     callback = function(event)

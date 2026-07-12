@@ -43,6 +43,9 @@ vim.opt.splitbelow = true
 
 vim.o.winborder = 'rounded'
 
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
+
 vim.diagnostic.config {
     update_in_insert = true,
     severity_sort = true,
