@@ -56,6 +56,7 @@ vim.lsp.enable {
     'nixd',
     'clangd',
     'dartls',
+    'gopls',
 }
 
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
