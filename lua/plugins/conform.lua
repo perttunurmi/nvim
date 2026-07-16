@@ -33,6 +33,8 @@ require('conform').setup {
         nix = { 'nixfmt' },
         cpp = { 'clang-format', lsp_format = 'fallback' },
 
+        dart = { lsp_format = 'fallback' },
+
         -- You can use a function here to determine the formatters dynamically
 
         python = function(bufnr)

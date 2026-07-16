@@ -1,8 +1,8 @@
 vim.keymap.set('n', '<space>x', ':.lua<CR>')
 vim.keymap.set('v', '<space>x', ':lua<CR>')
 
-vim.keymap.set('n', '<M-j>', '<CMD>cnext<CR>')
-vim.keymap.set('n', '<M-k>', '<CMD>cprev<CR>')
+vim.keymap.set('n', '<M-p>', '<CMD>cnext<CR>')
+vim.keymap.set('n', '<M-n>', '<CMD>cprev<CR>')
 
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>', { noremap = true, silent = true })
 
@@ -28,10 +28,10 @@ vim.keymap.set(
 )
 
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<M-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<M-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<M-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<M-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 vim.keymap.set('n', '<leader>w', ':write<CR>', { desc = 'Write file' })
 
