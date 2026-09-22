@@ -1,11 +1,4 @@
-vim.cmd 'colorscheme ashen'
--- vim.cmd 'colorscheme gruber-darker'
---
-vim.cmd('source ~/.config/nvim/lua/theme/custom.vim')
-
-local colors = {
-    yellow = '#FFEE8C',
-}
+vim.cmd([[colorscheme bark]])
 
 local hi = vim.cmd.hi
 
@@ -18,7 +11,4 @@ hi 'ColorColumn guibg=darkred'
 hi 'FloatBorder guibg=none'
 hi 'Comment guifg=grey'
 hi 'MatchParen guibg=grey'
-hi('LineNr guibg=none guifg=' .. colors['yellow'])
-hi('LineNrBelow guibg=none guifg=' .. colors['yellow'])
-hi('LineNrAbove guibg=none guifg=' .. colors['yellow'])
 hi 'SignColumn guibg=none'

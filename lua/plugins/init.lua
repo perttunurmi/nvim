@@ -3,8 +3,6 @@ vim.pack.add {
     'https://github.com/wakatime/vim-wakatime',
     'https://github.com/romus204/tree-sitter-manager.nvim',
     'https://github.com/tpope/vim-sleuth',
-    'https://github.com/ficd0/ashen.nvim',
-    'https://github.com/blazkowolf/gruber-darker.nvim',
 }
 
 vim.cmd 'packadd nvim.undotree'
